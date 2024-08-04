@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/daspoet/harp"
+)
 
 func main() {
-	fmt.Println("hello from harp")
+    fmt.Println(harp.Greet())
 }
