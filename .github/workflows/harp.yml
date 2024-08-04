@@ -1,0 +1,33 @@
+name: Harp
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build-test-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.22'
+
+    - name: Build
+      run: go build -race -v ./...
+
+    - name: Test
+      run: go test -race -v ./...
+
+    - name: Check
+      run: |
+        go vet ./...
+        if [ "$(go fmt ./... | wc -l)" -gt 0 ]; then
+          echo "your code is not formatted correctly - run 'go fmt ./...' to fix it"
+          go fmt ./...
+          exit 1
+        fi
