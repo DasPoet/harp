@@ -3,9 +3,9 @@ package harp
 import (
 	"testing"
 
-	"github.com/shoenig/test"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestHarp_Greet(t *testing.T) {
-	test.Eq(t, "hello from harp", Greet())
+    assert.Equal(t, "hello from harp", Greet())
 }

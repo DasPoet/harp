@@ -3,7 +3,7 @@ package ast
 import (
 	"testing"
 
-	"github.com/shoenig/test"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestVisibility_String(t *testing.T) {
@@ -15,6 +15,6 @@ func TestVisibility_String(t *testing.T) {
 	}
 
     for v, expected := range cases {
-        test.Eq(t, expected, v.String())
+        assert.Equal(t, expected, v.String())
     }
 }
