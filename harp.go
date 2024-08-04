@@ -1,5 +1,5 @@
 package harp
 
 func Greet() string {
-    return "hello from harp"
+	return "hello from harp"
 }
