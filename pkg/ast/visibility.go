@@ -10,6 +10,13 @@ const (
 	Public
 )
 
+func (v Visibility) Matches(other Visibility) bool {
+    if v == All || other == All {
+        return true
+    }
+    return v == other
+}
+
 func (v Visibility) String() string {
 	switch v {
 	case All:

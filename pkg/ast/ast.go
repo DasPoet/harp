@@ -16,10 +16,10 @@ func Format(node ast.Node, fset *token.FileSet, out io.Writer) error {
 	return printer.Fprint(out, token.NewFileSet(), node)
 }
 
-func ParseFile(filename string) (ast.Node, *token.FileSet, error) {
+func ParseFile(filename string, src any) (ast.Node, *token.FileSet, error) {
 	fset := token.NewFileSet()
 
-	node, err := parser.ParseFile(fset, filename, nil, parser.ParseComments)
+	node, err := parser.ParseFile(fset, filename, src, parser.ParseComments)
 	if err != nil {
 		return nil, nil, err
 	}
