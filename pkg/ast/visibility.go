@@ -21,11 +21,11 @@ func ParseVisibility(raw string) (Visibility, error) {
 		"public":  Public,
 	}
 
-    visibility, ok := visibilityByRaw[strings.ToLower(raw)]
-    if !ok {
-        return 0, errors.New("invalid visibility: '" + raw + "', expected one of: " + strings.Join(keys(visibilityByRaw), ", "))
-    }
-    return visibility, nil
+	visibility, ok := visibilityByRaw[strings.ToLower(raw)]
+	if !ok {
+		return 0, errors.New("invalid visibility: '" + raw + "', expected one of: " + strings.Join(keys(visibilityByRaw), ", "))
+	}
+	return visibility, nil
 }
 
 func (v Visibility) Matches(other Visibility) bool {
@@ -48,9 +48,9 @@ func (v Visibility) String() string {
 }
 
 func keys[K comparable, V any](m map[K]V) []K {
-    keys := make([]K, 0, len(m))
-    for k := range m {
-        keys = append(keys, k)
-    }
-    return keys
+	keys := make([]K, 0, len(m))
+	for k := range m {
+		keys = append(keys, k)
+	}
+	return keys
 }

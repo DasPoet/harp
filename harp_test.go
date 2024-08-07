@@ -7,5 +7,5 @@ import (
 )
 
 func TestHarp_Greet(t *testing.T) {
-    assert.Equal(t, "hello from harp", Greet())
+	assert.Equal(t, "hello from harp", Greet())
 }

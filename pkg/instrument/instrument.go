@@ -11,7 +11,7 @@ type Context struct {
 	importsToAdd []string
 }
 
-func (c *Context) AddImports(packages... string) {
+func (c *Context) AddImports(packages ...string) {
 	c.importsToAdd = append(c.importsToAdd, packages...)
 }
 

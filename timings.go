@@ -58,7 +58,7 @@ func (t Timings) instrumentMethod(node *goast.FuncDecl) goast.Node {
 	endCall := &goast.DeferStmt{
 		Call: &goast.CallExpr{
 			Fun: &goast.FuncLit{
-                Type: &goast.FuncType{},
+				Type: &goast.FuncType{},
 				Body: &goast.BlockStmt{
 					List: []goast.Stmt{
 						&goast.ExprStmt{

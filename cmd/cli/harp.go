@@ -8,6 +8,6 @@ var App = cli.App{
 	Name:  "harp",
 	Usage: "instrument your Go code with ease",
 	Commands: []*cli.Command{
-        &instrumentCmd,
-    },
+		&instrumentCmd,
+	},
 }

@@ -1,5 +1,5 @@
 package pattern
 
 type Pattern interface {
-    Matches(target string) bool
+	Matches(target string) bool
 }

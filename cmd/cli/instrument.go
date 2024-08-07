@@ -51,12 +51,12 @@ func prepareInstrumentArgs(ctx *cli.Context) (string, pattern.Pattern, pattern.P
 		method pattern.Pattern
 	)
 
-    if rawType := ctx.String("type"); rawType != "" {
-        typ = pattern.WithWildcards(rawType)
-    }
-    if rawMethod := ctx.String("method"); rawMethod != "" {
-        method = pattern.WithWildcards(rawMethod)
-    }
+	if rawType := ctx.String("type"); rawType != "" {
+		typ = pattern.WithWildcards(rawType)
+	}
+	if rawMethod := ctx.String("method"); rawMethod != "" {
+		method = pattern.WithWildcards(rawMethod)
+	}
 
 	visibility, err := ast.ParseVisibility(ctx.String("visibility"))
 	if err != nil {
