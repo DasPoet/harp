@@ -1,11 +1,15 @@
 package main
 
 import (
-	"fmt"
+	"log"
+	"os"
 
-	"github.com/daspoet/harp"
+	"github.com/daspoet/harp/cmd/cli"
 )
 
+
 func main() {
-	fmt.Println(harp.Greet())
+	if err := cli.App.Run(os.Args); err != nil {
+		log.Fatalln(err)
+	}
 }
